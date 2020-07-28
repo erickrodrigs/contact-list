@@ -1,10 +1,10 @@
 <template>
   <v-app >
-    <div class="d-flex flex-wrap justify-center mx-auto my-auto" style="width: 1200px; max-height: 396px;">
-      <aside class="mr-6" style="width: 500px">
+    <div class="d-flex flex-wrap justify-center mx-auto my-auto" style="width: 1200px;">
+      <aside class="mr-6">
         <ContactForm />
       </aside>
-      <v-main style="width: 600px;">
+      <v-main>
         <ContactList />
       </v-main>
     </div>
@@ -23,6 +23,6 @@ export default {
   },
   data: () => ({
     //
-  }),
+  })
 };
 </script>

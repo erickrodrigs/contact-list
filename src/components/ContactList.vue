@@ -1,5 +1,7 @@
 <template>
-  <v-list three-line style="border: 1px solid gray; height: 396px; overflow-y:auto">
+  <v-list 
+    three-line 
+    style="border: 1px solid gray; height: 396px; width: 600px; overflow-y:auto">
     <template
       v-for="contact in contacts">
       <v-list-item v-bind:key="contact.email">
@@ -48,7 +50,6 @@ export default {
           email: 'marcos@ime.usp.br',
           phone: '(11) 33333-3333'
         }
-
       ]
     }
   }
