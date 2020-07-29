@@ -14,8 +14,7 @@ const store = new Vuex.Store({
     addContact: (state, contact) => {
       state.contacts.push(contact);
     },
-    removeContact: (state, contact) => {
-      const index = state.contacts.findIndex(elem => elem.email === contact.email);
+    removeContact: (state, index) => {
       state.contacts.splice(index, 1);
     }
   },
@@ -24,7 +23,8 @@ const store = new Vuex.Store({
       context.commit('addContact', contact);
     },
     removeContact: (context, contact) => {
-      context.commit('removeContact', contact);
+      const index = context.state.contacts.findIndex(elem => elem.email === contact.email);
+      context.commit('removeContact', index);
     }
   }
 });
