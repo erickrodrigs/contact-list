@@ -12,7 +12,7 @@
           <v-list-item-title>{{ contact.name }}, {{ contact.age }} years old</v-list-item-title>
           <v-list-item-subtitle>Email: {{ contact.email }}</v-list-item-subtitle>
         </v-list-item-content>
-        <v-list-item-icon>
+        <v-list-item-icon style="cursor: pointer" v-on:click="removeContact(contact)">
           <v-icon>mdi-delete</v-icon>
         </v-list-item-icon>
       </v-list-item>
@@ -22,9 +22,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
+  methods: {
+    ...mapActions(['removeContact'])
+  },
   computed: {
     ...mapGetters({
       contacts: 'getContacts'
