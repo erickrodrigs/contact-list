@@ -39,6 +39,11 @@ const store = new Vuex.Store({
     addContact: (state, contact) => {
       state.contacts.push(contact);
     }
+  },
+  actions: {
+    addContact: (context, contact) => {
+      context.commit('addContact', contact);
+    }
   }
 });
 
