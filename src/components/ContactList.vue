@@ -15,6 +15,7 @@
           </v-list-item-avatar>
           <v-list-item-content>
             <v-list-item-title>{{ contact.name }}, {{ contact.age }} years old</v-list-item-title>
+            <v-list-item-subtitle>Phone: {{ contact.phone }}</v-list-item-subtitle>
             <v-list-item-subtitle>Email: {{ contact.email }}</v-list-item-subtitle>
           </v-list-item-content>
           <v-list-item-icon style="cursor: pointer" v-on:click="removeContact(contact)">
