@@ -112,7 +112,20 @@ export default {
         return;
       }
 
-      this.$store.dispatch('addContact', this.contact);
+      this.$store.dispatch('addContact', {
+        name: this.contact.name,
+        age: this.contact.age,
+        email: this.contact.email,
+        phone: this.contact.phone,
+      });
+      
+      this.clearInputs();
+    },
+    clearInputs() {
+      this.contact.name = '';
+      this.contact.age = '';
+      this.contact.email = '';
+      this.contact.phone = '';
     }
   },
   watch: {
