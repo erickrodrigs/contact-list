@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   data: function() {
     return {
@@ -102,7 +104,15 @@ export default {
       }
 
       if (isValid)
-        this.$store.dispatch('addContact', this.contact);
+        this.addContact();
+    },
+    addContact() {
+      if (this.contacts.filter(elem => elem.phone === this.contact.phone).length !== 0) {
+        alert('Contact with this phone already exists.');
+        return;
+      }
+
+      this.$store.dispatch('addContact', this.contact);
     }
   },
   watch: {
@@ -130,6 +140,11 @@ export default {
         this.phoneInput.errorMessage = '';
       }
     }
+  },
+  computed: {
+    ...mapGetters({
+      contacts: 'getContacts'
+    })
   }
 }
 
