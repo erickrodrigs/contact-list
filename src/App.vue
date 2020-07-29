@@ -1,6 +1,6 @@
 <template>
   <v-app >
-    <div class="d-flex flex-wrap justify-center mx-auto my-auto" style="width: 1200px;">
+    <div class="d-flex flex-wrap justify-center mx-auto my-auto">
       <aside class="mr-6">
         <ContactForm />
       </aside>
